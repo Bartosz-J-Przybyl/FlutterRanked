@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "541132032200",
+    "project_id": "rankedbjp",
+    "storage_bucket": "rankedbjp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:541132032200:android:4972e4d1d2666efac53dfd",
+        "android_client_info": {
+          "package_name": "com.bjp.ranked"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "541132032200-hifpblujftdeqn10am3kn1f2kgtojqti.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBM6fLcLLYyiW1GkrOlMebB1ilcN-yom2M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "541132032200-hifpblujftdeqn10am3kn1f2kgtojqti.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
