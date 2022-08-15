@@ -13,6 +13,8 @@ class AddOpinionPageContent extends StatefulWidget {
 class _AddOpinionPageContentState extends State<AddOpinionPageContent> {
   var gameName = "";
   var nameName = "";
+  var rating = 3.0;
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -39,11 +41,25 @@ class _AddOpinionPageContentState extends State<AddOpinionPageContent> {
               });
             },
           ),
+          Slider(
+            onChanged: (newValue) {
+              setState(() {
+                rating = newValue;
+              });
+            },
+            value: rating,
+            min: 1.0,
+            max: 6.0,
+            divisions: 10,
+            label: rating.toString(),
+          ),
           ElevatedButton(
             onPressed: () {
-              FirebaseFirestore.instance
-                  .collection("game")
-                  .add({"neme": gameName, "game": nameName, "rating": 3.0});
+              FirebaseFirestore.instance.collection("game").add({
+                "neme": gameName,
+                "game": nameName,
+                "rating": rating,
+              });
             },
             child: const Text("Dodaj"),
           ),
