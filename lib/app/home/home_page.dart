@@ -1,6 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+import 'add_opinion/add_opinion_page_contennt.dart';
+import 'game/game_page_contennt.dart';
+import 'my_account/my_account_page_contennt.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({
     Key? key,
@@ -19,35 +23,18 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text("RANKING GIER"),
+      ),
       body: Builder(builder: (context) {
         if (currentIndex == 0) {
-          return Center(
-            child: Text("JEDEN"),
-          );
+          return const GamesPagesContent();
         }
 
         if (currentIndex == 2) {
-          return Center(
-            child: Text("TRZY"),
-          );
+          return const AddOpinionPageContent();
         }
-        return Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text("jesteś zalogowany jako ${widget.user.email}"),
-              const SizedBox(
-                height: 20,
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  FirebaseAuth.instance.signOut();
-                },
-                child: const Text("Wyloguj"),
-              ),
-            ],
-          ),
-        );
+        return MyAccountPageCountent(email: widget.user.email);
       }),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentIndex,
