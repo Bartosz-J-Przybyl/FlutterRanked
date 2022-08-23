@@ -11,8 +11,8 @@ class AddOpinionPageContent extends StatefulWidget {
 }
 
 class _AddOpinionPageContentState extends State<AddOpinionPageContent> {
-  var gameName = "";
-  var nameName = "";
+  var restaurantName = "";
+  var pizzaName = "";
   var rating = 3.0;
 
   @override
@@ -27,7 +27,7 @@ class _AddOpinionPageContentState extends State<AddOpinionPageContent> {
             ),
             onChanged: (newValue) {
               setState(() {
-                gameName = newValue;
+                restaurantName = newValue;
               });
             },
           ),
@@ -37,7 +37,7 @@ class _AddOpinionPageContentState extends State<AddOpinionPageContent> {
             ),
             onChanged: (newValue) {
               setState(() {
-                nameName = newValue;
+                pizzaName = newValue;
               });
             },
           ),
@@ -55,9 +55,9 @@ class _AddOpinionPageContentState extends State<AddOpinionPageContent> {
           ),
           ElevatedButton(
             onPressed: () {
-              FirebaseFirestore.instance.collection("game").add({
-                "neme": gameName,
-                "game": nameName,
+              FirebaseFirestore.instance.collection("restaurant").add({
+                "neme": restaurantName,
+                "pizza": pizzaName,
                 "rating": rating,
               });
             },
